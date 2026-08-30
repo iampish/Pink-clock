@@ -1,0 +1,68 @@
+/* Centers everything globally on the viewport */
+body {
+  background: #ffe4e6; /* Soft, flat pastel pink background */
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stacks elements vertically */
+  justify-content: center; /* Centers vertically */
+  align-items: center; /* Centers horizontally */
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+  gap: 24px; /* creates ca spacing room between button and clock */
+}
+
+/* Format Toggle Button Styling */
+#format-toggle {
+  background: #ffffff;
+  color: #f43f5e;
+  border: 2px solid #f43f5e;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  order: 2; /*forces the button to sit nelow the clock box */
+}
+
+#format-toggle:hover {
+    background: #f43f5e;
+    color: #ffffff;
+}
+
+/*clock sturcture*/
+.clock-container {
+  background: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  border: 3px solid #f43f5e;
+  display: flex;
+  gap: 10px;
+}
+
+/*individual digit tracking slots*/
+.slot {
+    display: inline-flex;
+    flex-direction: column;
+    height: 70px;
+    overflow: hidden;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #f43f5e;
+    line-height: 70px;
+}
+
+/*moving inner colums*/
+.digits {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*blinking colon animation*/
+.colon {
+    font-size: 4rem;
+    color: #f43f5e;
+    line-height: 60px;
+    animation: blink 1s steps(2) infinite;
+}
